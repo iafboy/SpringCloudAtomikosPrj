@@ -1,0 +1,39 @@
+eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/
+spring.application.name=service-disttrans
+feign.hystrix.enabled=true
+server.port=8082
+# Oracle 1
+spring.datasource.test1.url=jdbc:oracle:thin:@localhost:1521:ORCLCDB
+spring.datasource.test1.username=C##testone
+spring.datasource.test1.password=testone
+spring.datasource.test1.minPoolSize = 3
+spring.datasource.test1.maxPoolSize = 25
+spring.datasource.test1.maxLifetime = 20000
+spring.datasource.test1.borrowConnectionTimeout = 30
+spring.datasource.test1.loginTimeout = 30
+spring.datasource.test1.maintenanceInterval = 60
+spring.datasource.test1.maxIdleTime = 60
+spring.datasource.test1.testQuery = select 1 from dual
+
+# # Oracle 2
+spring.datasource.test2.url=jdbc:oracle:thin:@localhost:1521:ORCLCDB
+spring.datasource.test2.username=C##TESTTWO
+spring.datasource.test2.password=testtwo
+spring.datasource.test2.minPoolSize = 3
+spring.datasource.test2.maxPoolSize = 25
+#连接最大存活时间
+spring.datasource.test2.maxLifetime = 20000
+#获取连接失败重新获等待最大时间
+spring.datasource.test2.borrowConnectionTimeout = 30
+#登入超时
+spring.datasource.test2.loginTimeout = 30
+# 连接回收时间
+spring.datasource.test2.maintenanceInterval = 60
+#最大闲置时间，超过最小连接池连接的连接将将关闭
+spring.datasource.test2.maxIdleTime = 60
+spring.datasource.test2.testQuery = select 1 from dual
+
+
+
+
+

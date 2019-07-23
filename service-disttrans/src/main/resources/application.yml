@@ -1,0 +1,51 @@
+eureka: 
+ client:
+   serviceUrl:
+     defaultZone: http://localhost:8761/eureka/
+   healthcheck:
+     enabled: true
+   instance:
+     lease-expiration-duration-in-seconds: 30
+     lease-renewal-interval-in-seconds: 10
+feign:
+  hystrix:
+    enabled: true
+server:
+  port: 8082
+spring:
+  application:
+    name: service-disttrans
+
+# Oracle 1
+  datasource:
+    test1:
+      url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
+      username: C##testone
+      password: testone
+      minPoolSize: 3
+      maxPoolSize: 25
+      maxLifetime: 20000
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      testQuery: select 1 from dual
+
+# # Oracle 2
+    test2:
+      url: jdbc:oracle:thin:@localhost:1521:ORCLCDB
+      username: C##TESTTWO
+      password: testtwo
+      minPoolSize: 3
+      maxPoolSize: 25
+      maxLifetime: 20000
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      testQuery: select 1 from dual
+
+
+
+
+

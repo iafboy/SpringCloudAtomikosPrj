@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    instance:
+      lease-expiration-duration-in-seconds: 30
+      lease-renewal-interval-in-seconds: 10
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+
+zuul:
+  routes:
+    api-t:
+      path: /api-t/**
+      serviceId: service-disttrans
